@@ -1,2 +1,1 @@
 # rust-initial
-# rust-initial
