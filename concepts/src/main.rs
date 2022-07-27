@@ -2,14 +2,24 @@ fn main() {
     const ARR: [i32;5] = [1,2,3,4,5];
     let mut s1 = String::from("helblo");
     let new_str = String::from("hi there");
-    let x: (i32, f64, i32, usize, String) = (test_loop(24), test_fun(32.0), test_in_array(ARR), first_word(&mut s1), no_dangle(new_str));
+    let x: (i32, f64, i32, usize, usize, String) = (
+        test_loop(24), test_fun(32.0),
+        test_in_array(ARR), first_word(&mut s1),
+        first_word(&new_str), no_dangle(new_str)
+    );
 
     let r3 = &mut s1;
     println!("{}", r3);
 
-    let five_hundred = x.3;
+    let five_hundred = x.4;
 
-    print!("The value of y is: {five_hundred}")
+    // let slice = &r3[0..2];
+    let slice = &r3[..2];
+
+    println!("The value of z is: {slice}");
+
+    println!("The value of y is: {five_hundred}");
+
 }
 
 fn test_fun(int: f64) -> f64 {
